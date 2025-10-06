@@ -3,13 +3,16 @@ let tasks = [];
 let isRunning = true;
 
 while (isRunning) {
-  let d = prompt("Выбери действие: 1-Новая 2-Список 3-Выход: ")
+  let d = prompt("Выбери действие: 1-Новая 2-Список 3-Удалить 4-Выход : ")
   if (d === "1") {
     let vvod = prompt("Введи задачу: ")
     tasks.push(vvod)
   } else if (d === "2") {
     console.log(tasks)
   } else if (d === "3") {
+    let vod = prompt("Выберите задачу для удаления: " + tasks + " ")
+    tasks.splice(vod - 1, 1)
+  } else if (d === "4") {
     isRunning = false;
     console.log("Выход из программы");
   } else {
